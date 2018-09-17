@@ -13,7 +13,13 @@ get '/power' do
   "The white ranger is always the best"
 end
 
-get '/kitty' do
-  @names = ["Amigo", "Walter", "Batman"].sample
+get '/random-kitty' do
+  @name = ["Amigo", "Walter", "Batman"].sample
+  erb(:index)
+end
+
+get '/named-kitty' do
+  p params
+  @name = params[:name]
   erb(:index)
 end
