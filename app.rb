@@ -18,8 +18,12 @@ get '/random-kitty' do
   erb(:index)
 end
 
-get '/named-kitty' do
+get '/kitty-form' do
+  erb :kitty_form
+end
+
+post '/named-kitty' do
   p params
   @name = params[:name]
-  erb(:index)
+  erb :index
 end
